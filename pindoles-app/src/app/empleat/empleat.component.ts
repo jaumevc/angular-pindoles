@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class EmpleatComponent {
 
+  nom = "Jaume";
+  cognom = "Valls";
+  empresa = "Company & Co";
+  edat = 18;
+
 }
