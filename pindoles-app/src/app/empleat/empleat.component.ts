@@ -12,6 +12,10 @@ export class EmpleatComponent {
   nom = "Jaume";
   cognom = "Valls";
   empresa = "Company & Co";
-  edat = 18;
+  private edat = 18;
+
+  getEdat(){
+    return this.edat;
+  }
 
 }
