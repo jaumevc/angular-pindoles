@@ -2,19 +2,20 @@
     <p>Component empleat standard works</p>
     <h3>Dades de l'empleat</h3>
     <ul>
-        <li>{{nom}}</li>
-        <li>{{cognom}}</li>
-        <li>{{empresa}}</li>
-        <li>{{getEdat() + 33}}</li>
-        <li>{{getEdat() >= 18? 'MAJOR D\'EDAT' : 'ES MENOR D\'EDAT'}}</li>
+        <li>Nom:{{nom}}</li>
+        <li>Cognom: {{cognom}}</li>
+        <!-- <li>Empresa: {{empresa}}</li> -->
+        <li>Empresa: {{txtFieldempresa.value}}</li>
+        <li>Edat:{{getEdat() + 33}}</li>
+        <li>Situació: {{getEdat() >= 18? 'MAJOR D\'EDAT' : 'ES MENOR D\'EDAT'}}</li>
     </ul>
 </div>
 
 <div style="background-color:aqua">
     <br/>   
 Introdueix el nom de l'empresa: 
-<input type="text"> &nbsp;&nbsp;&nbsp;
-<input type="button" value="canviar nom empresa">
+<input type="text" #txtFieldempresa> &nbsp;&nbsp;&nbsp;
+<input type="button" value="canviar nom empresa" (click)="cridaEmpresa(txtFieldempresa.value)">
 <br/>
 <br/>
 </div>

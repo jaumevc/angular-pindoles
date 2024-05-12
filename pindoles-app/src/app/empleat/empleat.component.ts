@@ -11,11 +11,14 @@ export class EmpleatComponent {
 
   nom = "Jaume";
   cognom = "Valls";
-  empresa = "Company & Co";
+  //empresa = "Company & Co";
   private edat = 18;
 
   getEdat(){
     return this.edat;
   }
 
+  cridaEmpresa(valor:string){
+    
+  }
 }
