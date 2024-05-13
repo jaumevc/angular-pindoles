@@ -4,18 +4,22 @@
     <ul>
         <li>Nom:{{nom}}</li>
         <li>Cognom: {{cognom}}</li>
-        <!-- <li>Empresa: {{empresa}}</li> -->
-        <li>Empresa: {{txtFieldempresa.value}}</li>
+        <li>Atribut Empresa, valor inicial: {{empresa}}</li>
+        <!-- <li>Empresa introduida: {{txtFieldempresa.value}}</li> -->
         <li>Edat:{{getEdat() + 33}}</li>
         <li>Situació: {{getEdat() >= 18? 'MAJOR D\'EDAT' : 'ES MENOR D\'EDAT'}}</li>
     </ul>
 </div>
 
+
 <div style="background-color:aqua">
     <br/>   
 Introdueix el nom de l'empresa: 
-<input type="text" #txtFieldempresa> &nbsp;&nbsp;&nbsp;
-<input type="button" value="canviar nom empresa" (click)="cridaEmpresa(txtFieldempresa.value)">
+
+<!-- <input type="text" #txtFieldempresa (keyup)="0"> &nbsp;&nbsp;&nbsp; -->
+<!-- <input type="button" value="canviar nom empresa" (click)="cridaEmpresa(txtFieldempresa.value)"> -->
+<input type="text" [(ngModel)]="nouNomEmpresa"> &nbsp;&nbsp;&nbsp;
+<input type="button" value="canviar nom empresa" (click)="cridaEmpresa()">
 <br/>
 <br/>
 </div>

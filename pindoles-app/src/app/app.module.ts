@@ -7,6 +7,8 @@ import { EmpleatsComponent } from './empleats/empleats.component';
 import { EmpleatComponent } from './empleat/empleat.component';
 import { CurrantComponent } from './currant/currant.component';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { CurrantComponent } from './currant/currant.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
