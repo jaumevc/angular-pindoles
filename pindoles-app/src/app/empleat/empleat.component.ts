@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
   //styles:["p{background-color: green;}"]
 })
 export class EmpleatComponent {
-
   nom = "Jaume";
   cognom = "Valls";
   empresa = "Company & Co";
   private edat = 18;
-  
   nouNomEmpresa: string = "";
+  // textfieldPropertie = true;
+  textfieldPropertie = false;
 
   getEdat(){
     return this.edat;
