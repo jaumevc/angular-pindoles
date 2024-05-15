@@ -15,6 +15,12 @@ export class EmpleatComponent {
   nouNomEmpresa: string = "";
   // textfieldPropertie = true;
   textfieldPropertie = false;
+  userLogin = true;
+
+
+  getUserLogin(){
+      this.userLogin;
+  }
 
   getEdat(){
     return this.edat;

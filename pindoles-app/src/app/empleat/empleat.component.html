@@ -19,5 +19,7 @@
     <input type="button" value="canviar nom empresa" (click)="cridaEmpresa()">
     <br />
     <br />
-    Usuari Regitrat: <input type="checkbox">
+    Usuari Regitrat: <input type="checkbox" id="registre" [checked]="userLogin"/>
+    <br />
+    {{getUserLogin()}}
 </div>
