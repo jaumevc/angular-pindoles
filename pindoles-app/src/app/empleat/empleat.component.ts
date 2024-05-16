@@ -15,11 +15,14 @@ export class EmpleatComponent {
   nouNomEmpresa: string = "";
   // textfieldPropertie = true;
   textfieldPropertie = false;
-  userLogin = true;
-
+  userLogin = false;
 
   getUserLogin(){
       this.userLogin;
+  }
+
+  setUserRegistered(){
+    alert("Usuari registrat amb el txecbox a true!!!");
   }
 
   getEdat(){
