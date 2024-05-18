@@ -16,13 +16,23 @@ export class EmpleatComponent {
   // textfieldPropertie = true;
   textfieldPropertie = false;
   userLogin = false;
+  textDeRegistre = "No hi ha cap usuari registrat";
 
   getUserLogin(){
       this.userLogin;
   }
 
-  setUserRegistered(){
-    alert("Usuari registrat amb el txecbox a true!!!");
+  setUserRegistered(event:Event){
+    //alert("Usuari registrat amb el txecbox a true!!!");
+    // if(this.userLogin = true)
+    //   this.textDeRegistre = "Hi ha un usuari registrat";
+    // alert(event.target);
+    if((<HTMLInputElement>event.target).value=="y"){
+      this.textDeRegistre = "Hi ha un usuari registrat";
+    }else{
+      this.textDeRegistre = "No Hi ha cap usuari registrat";
+    }
+
   }
 
   getEdat(){
