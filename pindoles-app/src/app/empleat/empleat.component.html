@@ -18,7 +18,10 @@
     
     <!-- <input type="text" [(ngModel)]="nouNomEmpresa" [disabled]="textfieldPropertie"> &nbsp;&nbsp;&nbsp;
     <input type="button" value="canviar nom empresa" (click)="cridaEmpresa()"> -->
-
+    <!--EVENT BINDING-->
+    <!-- <input type="text" (input)="canviaNomEmpresa($event)"> -->
+    <!--2 WAY BINDING-->
+    <input type="text" [(ngModel)]="empresa">
     <br />
     <br />
     {{textDeRegistre}}

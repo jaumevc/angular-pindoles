@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class EmpleatComponent {
   nom = "Jaume";
   cognom = "Valls";
-  empresa = "";
+  empresa = "Google";
   private edat = 18;
   nouNomEmpresa: string = "";
   // textfieldPropertie = true;
@@ -42,4 +42,8 @@ cridaEmpresa(){
   this.empresa = this.nouNomEmpresa;
   this.nouNomEmpresa = ""; 
   }
+
+  // canviaNomEmpresa(event:Event){
+  //   this.empresa = (<HTMLInputElement>event.target).value;
+  // }
 }
