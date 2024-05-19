@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class EmpleatComponent {
   nom = "Jaume";
   cognom = "Valls";
-  empresa = "Company & Co";
+  empresa = "";
   private edat = 18;
   nouNomEmpresa: string = "";
   // textfieldPropertie = true;
@@ -23,16 +23,15 @@ export class EmpleatComponent {
   }
 
   setUserRegistered(event:Event){
-    //alert("Usuari registrat amb el txecbox a true!!!");
-    // if(this.userLogin = true)
-    //   this.textDeRegistre = "Hi ha un usuari registrat";
-    // alert(event.target);
     if((<HTMLInputElement>event.target).value=="y"){
       this.textDeRegistre = "Hi ha un usuari registrat";
     }else{
       this.textDeRegistre = "No Hi ha cap usuari registrat";
     }
-
+    //alert("Usuari registrat amb el txecbox a true!!!");
+    // if(this.userLogin = true)
+    //   this.textDeRegistre = "Hi ha un usuari registrat";
+    // alert(event.target);
   }
 
   getEdat(){

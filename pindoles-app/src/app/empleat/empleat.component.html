@@ -15,16 +15,20 @@
     <br /> Introdueix el nom de l'empresa:
     <!-- <input type="text" #txtFieldempresa (keyup)="0"> &nbsp;&nbsp;&nbsp; -->
     <!-- <input type="button" value="canviar nom empresa" (click)="cridaEmpresa(txtFieldempresa.value)"> -->
-    <input type="text" [(ngModel)]="nouNomEmpresa" [disabled]="textfieldPropertie"> &nbsp;&nbsp;&nbsp;
-    <input type="button" value="canviar nom empresa" (click)="cridaEmpresa()">
+    
+    <!-- <input type="text" [(ngModel)]="nouNomEmpresa" [disabled]="textfieldPropertie"> &nbsp;&nbsp;&nbsp;
+    <input type="button" value="canviar nom empresa" (click)="cridaEmpresa()"> -->
+
     <br />
     <br />
     {{textDeRegistre}}
     <br />
     <!-- Usuari Regitrat: <input type="checkbox" id="registre" [checked]="userLogin" (click)="setUserRegistered()"/> -->
-    Usuari Regitrat: <input type="radio" value="y" name="nomRegistre" id="registre" [checked]="userLogin" (click)="setUserRegistered($event)"/>
+    Usuari Regitrat: <input type="radio" value="y" name="nomRegistre" id="registre" 
+                            [checked]="userLogin" (click)="setUserRegistered($event)"/>
     <br />
-    Usuari NO Regitrat: <input type="radio" value="n" name="nomRegistre" (click)="setUserRegistered($event)"/>
+    Usuari NO Regitrat: <input type="radio" value="n" name="nomRegistre" 
+                            [checked]="!userLogin" (click)="setUserRegistered($event)"/>
     <br />
     {{getUserLogin()}}
 </div>
