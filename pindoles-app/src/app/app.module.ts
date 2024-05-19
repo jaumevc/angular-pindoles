@@ -11,15 +11,10 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    EmpleatsComponent,
-    EmpleatComponent,
-    CurrantComponent
+    AppComponent,EmpleatsComponent,EmpleatComponent,CurrantComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    BrowserModule,AppRoutingModule,FormsModule
   ],
   providers: [
     provideClientHydration()
