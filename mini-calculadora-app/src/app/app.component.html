@@ -1,17 +1,20 @@
 <h1>{{title}}</h1>
 <br/>
-<!-- <form> -->
-Introdueix el primer valor:<input type="text" [(ngModel)]="num1" >
+
+<form>
+Introdueix el primer valor:&nbsp;<input type="text" [(ngModel)]="num1" name="num1" >
 <br/>
 <br/>
-Introdueix el segon valor:<input type="text" [(ngModel)]="num2" >
+Introdueix el segon valor:&nbsp;<input type="text" [(ngModel)]="num2" name="num2">
 <br/>
 <br/>
-<input type="button" class="btn btn-primary" value="Sumar" (click)="sumar()">&nbsp;&nbsp;
-<input type="submit" class="btn btn-success" value="Restar" (click)="restar()">&nbsp;&nbsp;
+<input type="submit" class="btn btn-primary" value="Sumar" (click)="sumar()">&nbsp;&nbsp;
+<input type="button" class="btn btn-success" value="Restar" (click)="restar()">&nbsp;&nbsp;
 <input type="submit" class="btn btn-danger" value="Multiplicar" (click)="multiplicar()">&nbsp;&nbsp;
-<input type="submit" class="btn btn-warning" value="Dividir" (click)="dividir()">
-<!-- </form> -->
+<input type="button" class="btn btn-warning" value="Dividir" (click)="dividir()">
+
+</form>
+
 <br/>
 <br/>
 <p>Resultat operació: {{result}}</p>
