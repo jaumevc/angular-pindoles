@@ -1,12 +1,15 @@
+<div class="container">
 <h1>{{title}}</h1>
 <br/>
 
 <form>
 <!--Si es fa un formulari es necessari el name perque funcionin les accions dels btons-->
-Introdueix el primer valor:&nbsp;<input type="text" [(ngModel)]="num1" name="oper1" >
+<!-- Introdueix el primer valor:&nbsp;<input type="text" [(ngModel)]="num1" name="oper1" > -->
+Introdueix el primer valor:&nbsp;<input type="number" [(ngModel)]="num1" name="oper1" >
 <br/>
 <br/>
-Introdueix el segon valor:&nbsp;<input type="text" [(ngModel)]="num2" name="oper2">
+<!-- Introdueix el segon valor:&nbsp;<input type="text" [(ngModel)]="num2" name="oper2"> -->
+Introdueix el segon valor:&nbsp;<input type="number" [(ngModel)]="num2" name="oper2">
 <br/>
 <br/>
 <input type="submit" class="btn btn-primary" value="Sumar" (click)="sumar()">&nbsp;&nbsp;
@@ -19,3 +22,4 @@ Introdueix el segon valor:&nbsp;<input type="text" [(ngModel)]="num2" name="oper
 <br/>
 <br/>
 <p>Resultat operació: {{result}}</p>
+</div>
