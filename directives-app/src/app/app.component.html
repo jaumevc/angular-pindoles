@@ -1,0 +1,16 @@
+<div class="container">
+<h1>{{titol}}</h1>
+<form>
+Introdueix   usuari:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="user" name="tfUsuari" >
+<br/><br/>
+Introdueix password:&nbsp;
+<input type="password" [(ngModel)]="password" name="tfPswrd" >
+<br/><br/>
+<input type="submit" class="btn btn-primary" value="Login" (click)="login()">
+</form>
+
+<br/><br/>
+<p>{{missatge}}</p>
+
+</div>
