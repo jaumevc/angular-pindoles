@@ -11,6 +11,8 @@ Introdueix password:&nbsp;
 </form>
 
 <br/><br/>
-<p>{{missatge}}</p>
+
+<!-- <p *ngIf="loguejat">{{missatge}}</p> -->
+<p *ngIf="loguejat">{{missatge}} amb el nom de {{user}} i el password {{password}}</p>
 
 </div>

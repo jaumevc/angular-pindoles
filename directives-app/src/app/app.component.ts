@@ -10,8 +10,23 @@ export class AppComponent {
   user:string ="";
   password:string="";
   missatge:string="";
+  loguejat = false;
 
   login(){
-    this.missatge="L\'Usuari: "+this.user+", amb password: "+this.password+", S'ha registat correctament."
+
+    if(this.user.length > 1 
+        && this.password.length > 1){
+          this.loguejat = true;
+      }
+    
+    // if(this.loguejat){
+    //   this.missatge="L\'Usuari: "+this.user+", amb password: "
+    //                 +this.password+", S'ha registat correctament."
+    // }
+
+    // this.missatge="L\'Usuari: "+this.user+", amb password: "
+    //                 +this.password+", S'ha registat correctament."
+
+    this.missatge="L\'Usuari, S'ha registat correctament. "
   }
 }
