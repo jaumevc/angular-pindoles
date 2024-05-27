@@ -13,6 +13,10 @@ Introdueix password:&nbsp;
 <br/><br/>
 
 <!-- <p *ngIf="loguejat">{{missatge}}</p> -->
-<p *ngIf="loguejat">{{missatge}} amb el nom de {{user}} i el password {{password}}</p>
+<p *ngIf="loguejat; else noRegistrat">{{missatge}} amb el nom de {{user}} i el password {{password}}</p>
+
+<ng-template #noRegistrat>
+    <p>Ningú registrat</p>
+</ng-template>
 
 </div>
