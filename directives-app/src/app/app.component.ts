@@ -11,6 +11,17 @@ export class AppComponent {
   password:string="";
   missatge:string="";
   loguejat = false;
+  entradesBlog:object[];
+
+  constructor(){
+    this.entradesBlog = [
+      {titolentrada:"Python cada cop més present"},
+      {titolentrada:"Java present des de fa més de 20 anys"},
+      {titolentrada:"Javascrypt cada cop més funcional"},
+      {titolentrada:"Kotlin potència per a les teves apps"},
+      {titolentrada:"Pascal on està?"}
+    ]
+  }
 
   login(){
 
