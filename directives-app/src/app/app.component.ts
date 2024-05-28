@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+interface EntradaBlog {
+  titolentrada: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +15,7 @@ export class AppComponent {
   password:string="";
   missatge:string="";
   loguejat = false;
-  entradesBlog:object[];
+  entradesBlog:EntradaBlog[]; 
 
   constructor(){
     this.entradesBlog = [
@@ -20,7 +24,7 @@ export class AppComponent {
       {titolentrada:"Javascrypt cada cop més funcional"},
       {titolentrada:"Kotlin potència per a les teves apps"},
       {titolentrada:"Pascal on està?"}
-    ]
+    ];
   }
 
   login(){

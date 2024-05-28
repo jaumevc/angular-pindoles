@@ -21,7 +21,10 @@ Introdueix password:&nbsp;
 
 <br/>
 <ul>
-    <li *ngFor = "let entrada of entradesBlog;">{{entrada.titolentrada}}</li>
+    <li *ngFor = "let entrada of entradesBlog; let i=index;">
+        <span style="font-size: large; font-weight: bold;">{{entrada.titolentrada}}</span>
+        . Nº d'entrada: {{i}}
+    </li>
 </ul>
 
 </div>
