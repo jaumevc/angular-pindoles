@@ -42,6 +42,6 @@ export class AppComponent {
     // this.missatge="L\'Usuari: "+this.user+", amb password: "
     //                 +this.password+", S'ha registat correctament."
 
-    this.missatge="L\'Usuari, S'ha registat correctament. "
+    this.missatge="L\'Usuari, S'ha registat correctament. ";
   }
 }
