@@ -1,15 +1,44 @@
 <div class="container">
   <h1>{{title}}</h1>
-  <br/>
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let empleat of treballadors; let i=index">
-        <ul>
-          <li>
-            Entrada {{i+1}}: {{empleat.nom}} {{empleat.cognom}}, {{empleat.carrec}}, {{empleat.sou}}.
-          </li>
-        </ul>
-      </div>
+  <br /> <br />
+  <h2>Formulari introducció dades:</h2>
+  <br />
+  <!--es vol mostrar en una fila tots els textfields del formulari-->
+  <form class="form-group row">
+    <!--es vol mostrar el texte indicatiu del textfield a sobre del quadre de text-->
+    <div class="form-group col-md-3">
+      <label for="nom">Nom:</label>
+      <input type="text" [(ngModel)]="txtfNom" name="nomTf" id="nomId" placeholder="Afegiex el nom"
+        class="form-control">
+    </div>
+    <div class="form-group col-md-3">  
+    <label for="nom">Cognom:</label>
+    <input type="text" [(ngModel)]="txtfCognom" name="cognomTf" id="cognomId" placeholder="Afegiex el cognom"
+      class="form-control">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="nom">Càrrec:</label>
+      <input type="text" [(ngModel)]="txtfCarrec" name="carrecTf" id="carrecId" placeholder="Afegiex el càrrec"
+      class="form-control">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="nom">Sou:</label>
+      <input type="number" [(ngModel)]="txtfsou" name="souTf" id="souId" placeholder="Afegiex el sou" class="form-control">
+    </div>
+  </form>
+
+
+<br />
+<div class="row">
+  <div class="col">
+    <h2>Dades introduides:</h2>
+    <div *ngFor="let empleat of treballadors; let i=index">
+      <ul>
+        <li>
+          Entrada {{i+1}}: {{empleat.nom}} {{empleat.cognom}}, {{empleat.carrec}}, {{empleat.sou}}.
+        </li>
+      </ul>
     </div>
   </div>
+</div>
 </div>

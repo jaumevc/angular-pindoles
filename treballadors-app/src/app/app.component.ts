@@ -14,4 +14,10 @@ export class AppComponent {
     new Treballador("Ares", "Valls", "Presidenta", 5000)
   ];
 
+  txtfNom:string="";
+  txtfCognom:string="";
+  txtfCarrec:string="";
+  txtfsou:number=0;
+
+
 }
