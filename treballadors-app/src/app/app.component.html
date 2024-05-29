@@ -1,3 +1,15 @@
 <div class="container">
   <h1>{{title}}</h1>
+  <br/>
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let empleat of treballadors; let i=index">
+        <ul>
+          <li>
+            Entrada {{i+1}}: {{empleat.nom}} {{empleat.cognom}}, {{empleat.carrec}}, {{empleat.sou}}.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

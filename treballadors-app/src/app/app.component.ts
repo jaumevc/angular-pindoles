@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Treballador } from './treballador.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Formulari per afegir treballadors';
+
+  treballadors:Treballador[]=[
+    new Treballador("Mariona", "Valls", "Cap dept Biotec", 5000),
+    new Treballador("Ares", "Valls", "Presidenta", 5000)
+  ];
+
 }
