@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>{{title}}</h1>
+  <h1 style="text-align: center;">{{title}}</h1>
   <br /> <br />
   <h2>Formulari introducció dades:</h2>
   <br />
@@ -25,10 +25,16 @@
       <label for="nom">Sou:</label>
       <input type="number" [(ngModel)]="txtfsou" name="souTf" id="souId" placeholder="Afegiex el sou" class="form-control">
     </div>
+    
+    <div class="col">
+      <input type="submit" class="btn btn-primary" value="Add new worker" 
+            (click)="addNewWorker()" style="margin-top: 35px;">
+    </div>
+    
   </form>
 
 
-<br />
+<br /><br />
 <div class="row">
   <div class="col">
     <h2>Dades introduides:</h2>

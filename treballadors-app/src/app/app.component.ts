@@ -19,5 +19,11 @@ export class AppComponent {
   txtfCarrec:string="";
   txtfsou:number=0;
 
+  addNewWorker(){
+    // let currant:Treballador= new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou);
+    // this.treballadors.push(currant);
+    this.treballadors.push(new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
+  }
+
 
 }
