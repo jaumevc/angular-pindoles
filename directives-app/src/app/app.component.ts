@@ -16,6 +16,7 @@ export class AppComponent {
   missatge:string="";
   loguejat = false;
   entradesBlog:EntradaBlog[]; 
+  carrec:string="";
 
   constructor(){
     this.entradesBlog = [

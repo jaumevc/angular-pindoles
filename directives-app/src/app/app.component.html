@@ -7,13 +7,17 @@ Introdueix   usuari:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Introdueix password:&nbsp;
 <input type="password" [(ngModel)]="password" name="tfPswrd" >
 <br/><br/>
+Introdueix càrrec:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="carrec" name="tfcarrec" >
+<br/><br/>
 <input type="submit" class="btn btn-primary" value="Login" (click)="login()">
 </form>
 
 <br/><br/>
 
 <!-- <p *ngIf="loguejat">{{missatge}}</p> -->
-<p *ngIf="loguejat; else noRegistrat">{{missatge}} amb el nom de {{user}} i el password {{password}}</p>
+<p *ngIf="loguejat; else noRegistrat">{{missatge}} amb el nom de {{user}} i el password {{password}}, 
+    amb el càrrec de <span [ngStyle]="{color: carrec=='director'? 'red':'black'}"> {{carrec}} </span></p>
 
 <ng-template #noRegistrat>
     <p>Ningú registrat</p>
