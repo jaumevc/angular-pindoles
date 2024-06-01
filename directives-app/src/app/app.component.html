@@ -17,7 +17,10 @@ Introdueix càrrec:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <!-- <p *ngIf="loguejat">{{missatge}}</p> -->
 <p *ngIf="loguejat; else noRegistrat">{{missatge}} amb el nom de {{user}} i el password {{password}}, 
-    amb el càrrec de <span [ngStyle]="{color: carrec=='director'? 'red':'black'}"> {{carrec}} </span></p>
+    amb el càrrec de 
+    <!-- <span [ngStyle]="{color: carrec =='director'? 'red':'blue'}">{{carrec}}</span> -->
+    <span [ngClass]="{directorStyle: carrec == 'director'}">{{carrec}}</span>
+</p>
 
 <ng-template #noRegistrat>
     <p>Ningú registrat</p>
