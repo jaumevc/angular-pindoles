@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Treballador } from '../treballador.model';
 
 @Component({
   selector: 'app-treballador-fill',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './treballador-fill.component.css'
 })
 export class TreballadorFillComponent {
+
+  @Input() currant:Treballador;
+  @Input() k:number;
 
 }

@@ -11,43 +11,39 @@
       <input type="text" [(ngModel)]="txtfNom" name="nomTf" id="nomId" placeholder="Afegiex el nom"
         class="form-control">
     </div>
-    <div class="form-group col-md-3">  
-    <label for="nom">Cognom:</label>
-    <input type="text" [(ngModel)]="txtfCognom" name="cognomTf" id="cognomId" placeholder="Afegiex el cognom"
-      class="form-control">
+    <div class="form-group col-md-3">
+      <label for="nom">Cognom:</label>
+      <input type="text" [(ngModel)]="txtfCognom" name="cognomTf" id="cognomId" placeholder="Afegiex el cognom"
+        class="form-control">
     </div>
     <div class="form-group col-md-3">
       <label for="nom">Càrrec:</label>
       <input type="text" [(ngModel)]="txtfCarrec" name="carrecTf" id="carrecId" placeholder="Afegiex el càrrec"
-      class="form-control">
+        class="form-control">
     </div>
     <div class="form-group col-md-3">
       <label for="nom">Sou:</label>
-      <input type="number" [(ngModel)]="txtfsou" name="souTf" id="souId" placeholder="Afegiex el sou" class="form-control">
+      <input type="number" [(ngModel)]="txtfsou" name="souTf" id="souId" placeholder="Afegiex el sou"
+        class="form-control">
     </div>
-    
+
     <div class="col">
-      <input type="submit" class="btn btn-primary" value="Add new worker" 
-            (click)="addNewWorker()" style="margin-top: 35px;">
+      <input type="submit" class="btn btn-primary" value="Add new worker" (click)="addNewWorker()"
+        style="margin-top: 35px;">
     </div>
-    
+
   </form>
 
-<br /><br />
+  <br /><br />
+  <div class="row">
+    <div class="col">
+      <h2>Dades introduides:</h2>
 
-<app-treballador-fill></app-treballador-fill>
+      <app-treballador-fill *ngFor="let empleat of treballadors; let i=index" [currant]="empleat" [k]="i">
+      </app-treballador-fill>
 
-<br />
-<div class="row">
-  <div class="col">
-    <h2>Dades introduides:</h2>
-    <div *ngFor="let empleat of treballadors; let i=index">
-      <ul>
-        <li>
-          Entrada {{i+1}}: {{empleat.nom}} {{empleat.cognom}}, {{empleat.carrec}}, {{empleat.sou}}.
-        </li>
-      </ul>
     </div>
   </div>
-</div>
+
+  <br />
 </div>
