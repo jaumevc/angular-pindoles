@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { TreballadorFillComponent } from './treballador-fill/treballador-fill.component';
+import { AtributsExtraTreballadorComponent } from './atributs-extra-treballador/atributs-extra-treballador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TreballadorFillComponent
+    TreballadorFillComponent,
+    AtributsExtraTreballadorComponent
   ],
   imports: [
     BrowserModule,
