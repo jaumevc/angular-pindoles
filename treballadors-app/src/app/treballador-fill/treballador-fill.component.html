@@ -7,4 +7,12 @@
             Entrada {{k+1}}: {{currant.nom}} {{currant.cognom}}, {{currant.carrec}}, {{currant.sou}}.
         </li>
     </ul>
+    
+    <app-atributs-extra-treballador (novesCaracteristiques)="addCaracteristica($event)">
+    </app-atributs-extra-treballador>
+
+    <ul style="list-style: none;">
+        <li *ngFor="let atribut of nousAtributs">{{atribut}}</li>
+    </ul>
 </div>
+

@@ -1,1 +1,7 @@
-<p>atributs-extra-treballador works!</p>
+<!-- <p>atributs-extra-treballador works!</p> -->
+
+<label for="item-input">Nova Caracteristica:</label>&nbsp;&nbsp;
+<input type="text" id="item-input" #novaCarateristica>&nbsp;&nbsp;&nbsp;
+<button type="button" (click)="addNovesCaracteristiques(novaCarateristica.value)" class="btn btn-primary">
+    Add to parent's list
+</button>

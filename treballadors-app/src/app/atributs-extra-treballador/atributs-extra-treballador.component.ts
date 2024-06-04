@@ -7,6 +7,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class AtributsExtraTreballadorComponent {
 
-  @Output() newItemEvent = new EventEmitter<string>();
+  // @Output() newItemEvent = new EventEmitter<string>();
+  @Output() novesCaracteristiques = new EventEmitter<string>();
+
+  addNovesCaracteristiques(value: string) {
+    this.novesCaracteristiques.emit(value);
+  }
 
 }
