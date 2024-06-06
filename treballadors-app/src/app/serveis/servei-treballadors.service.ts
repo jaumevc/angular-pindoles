@@ -8,8 +8,6 @@ export class ServeiTreballadorsService {
   constructor() { }
 
   mostreMissatge(missatge:string){
-
     alert(missatge);
-    
   }
 }
