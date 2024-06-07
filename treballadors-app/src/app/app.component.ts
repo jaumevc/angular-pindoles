@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Treballador } from './treballador.model';
+import { ServeiTreballadorsService } from './serveis/servei-treballadors.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { Treballador } from './treballador.model';
 })
 export class AppComponent {
   title = 'Formulari per afegir treballadors';
+
+  constructor(private servei:ServeiTreballadorsService){}
 
   treballadors:Treballador[]=[
     new Treballador("Mariona", "Valls", "Cap dept Biotec", 5000),
@@ -22,6 +25,9 @@ export class AppComponent {
   addNewWorker(){
     // let currant:Treballador= new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou);
     // this.treballadors.push(currant);
+
+    this.servei.mostreMissatge("Nom Treballador: " +this.txtfNom+" \nCognom Treballador: "+this.txtfCognom+ " \nCarrec Treballador: "+this.txtfCarrec);
+
     this.treballadors.push(new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
   }
 
