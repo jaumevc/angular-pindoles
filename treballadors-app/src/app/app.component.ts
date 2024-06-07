@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Treballador } from './treballador.model';
 import { ServeiTreballadorsService } from './serveis/servei-treballadors.service';
+import { DadesTreballadors } from './serveis/dades.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,14 @@ import { ServeiTreballadorsService } from './serveis/servei-treballadors.service
 export class AppComponent {
   title = 'Formulari per afegir treballadors';
 
-  constructor(private servei:ServeiTreballadorsService){}
+  constructor(private servei:ServeiTreballadorsService, private serveiDades:DadesTreballadors){}
 
-  treballadors:Treballador[]=[
-    new Treballador("Mariona", "Valls", "Cap dept Biotec", 5000),
-    new Treballador("Ares", "Valls", "Presidenta", 5000)
-  ];
+  // treballadors:Treballador[]=[
+  //   new Treballador("Mariona", "Valls", "Cap dept Biotec", 5000),
+  //   new Treballador("Ares", "Valls", "Presidenta", 5000)
+  // ];
+
+  treballadors:Treballador[]=[];
 
   txtfNom:string="";
   txtfCognom:string="";
@@ -28,7 +31,8 @@ export class AppComponent {
 
     this.servei.mostreMissatge("Nom Treballador: " +this.txtfNom+" \nCognom Treballador: "+this.txtfCognom+ " \nCarrec Treballador: "+this.txtfCarrec);
 
-    this.treballadors.push(new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
+    // this.treballadors.push(new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
+    this.serveiDades.addTreballadorServei(new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
   }
 
 

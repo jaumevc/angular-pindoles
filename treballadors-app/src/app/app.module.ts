@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { TreballadorFillComponent } from './treballador-fill/treballador-fill.component';
 import { AtributsExtraTreballadorComponent } from './atributs-extra-treballador/atributs-extra-treballador.component';
 import { ServeiTreballadorsService } from './serveis/servei-treballadors.service';
+import { DadesTreballadors } from './serveis/dades.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,10 @@ import { ServeiTreballadorsService } from './serveis/servei-treballadors.service
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ServeiTreballadorsService],
+  providers: [
+    ServeiTreballadorsService,
+    DadesTreballadors
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
