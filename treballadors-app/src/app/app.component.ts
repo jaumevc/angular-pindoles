@@ -19,7 +19,6 @@ export class AppComponent implements OnInit{
   //   new Treballador("Mariona", "Valls", "Cap dept Biotec", 5000),
   //   new Treballador("Ares", "Valls", "Presidenta", 5000)
   // ];
-
   constructor(private servei:ServeiTreballadorsService, 
               private serveiDades:DadesTreballadors){
     //this.treballadors = this.serveiDades.treballadors;
@@ -27,15 +26,16 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.treballadors = this.serveiDades.treballadors;
   }
-
   addNewWorker(){
     // let currant:Treballador= new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou);
     // this.treballadors.push(currant);
 
-    this.servei.mostreMissatge("Nom Treballador: " +this.txtfNom+" \nCognom Treballador: "+this.txtfCognom+ " \nCarrec Treballador: "+this.txtfCarrec);
+    // this.servei.mostreMissatge("Nom Treballador: " +this.txtfNom+" \nCognom Treballador: "+
+    //   this.txtfCognom+ " \nCarrec Treballador: "+this.txtfCarrec);
 
     // this.treballadors.push(new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
-    this.serveiDades.addTreballadorServei(new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
+    this.serveiDades.addTreballadorServei(new Treballador(
+      this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
   }
 
 

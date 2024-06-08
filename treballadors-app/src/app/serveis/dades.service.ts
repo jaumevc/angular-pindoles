@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Treballador } from "../treballador.model";
+import { ServeiTreballadorsService } from "./servei-treballadors.service";
 
 @Injectable({
     providedIn: 'root'
   })
 export class DadesTreballadors{
 
+    constructor(private serveiPopup: ServeiTreballadorsService){}
 
     treballadors:Treballador[]=[
         new Treballador("Susana", "Jiménez", "Directora General", 9000),
@@ -15,6 +17,9 @@ export class DadesTreballadors{
       ];
 
       addTreballadorServei(treballador:Treballador){
+        this.serveiPopup.mostreMissatge("La presona que afegeixo a la llista:\n" +
+          treballador.nom + "\n" + treballador.cognom );
+          
         this.treballadors.push(treballador);
       }
 }
