@@ -1,4 +1,6 @@
 export class Treballador{
+    //per afegir la propietat extra a la bbdd
+    id:number;
 
     nom:string="";
     cognom:string="";
@@ -11,5 +13,6 @@ export class Treballador{
         this.carrec = carrec;
         this.sou = sou;
     }
+    
 
 }

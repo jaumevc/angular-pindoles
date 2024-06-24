@@ -24,7 +24,10 @@ export class AppComponent implements OnInit{
     //this.treballadors = this.serveiDades.treballadors;
   }
   ngOnInit(): void {
-    this.treballadors = this.serveiDades.treballadors;
+    //this.treballadors = this.serveiDades.treballadors;
+    this.serveiDades.getAllTreballadors().subscribe(data => {
+      this.treballadors = data;
+    });
   }
   addNewWorker(){
     // let currant:Treballador= new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou);
@@ -34,8 +37,17 @@ export class AppComponent implements OnInit{
     //   this.txtfCognom+ " \nCarrec Treballador: "+this.txtfCarrec);
 
     // this.treballadors.push(new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
-    this.serveiDades.addTreballadorServei(new Treballador(
-      this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
+    // this.serveiDades.addTreballadorServei(new Treballador(
+    //   this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
+
+    const nouTreballador = new Treballador(this.txtfNom, this.txtfCognom, this.txtfCarrec, this.txtfsou);
+
+    this.serveiDades.addTreballadorServei(nouTreballador).subscribe(data => {
+      this.treballadors.push(data);
+    }, error => {
+      console.error("Error en afegir el treballador", error);
+    });
+    
   }
 
 

@@ -8,6 +8,7 @@ import { TreballadorFillComponent } from './treballador-fill/treballador-fill.co
 import { AtributsExtraTreballadorComponent } from './atributs-extra-treballador/atributs-extra-treballador.component';
 import { ServeiTreballadorsService } from './serveis/servei-treballadors.service';
 import { DadesTreballadors } from './serveis/dades.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DadesTreballadors } from './serveis/dades.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     ServeiTreballadorsService,

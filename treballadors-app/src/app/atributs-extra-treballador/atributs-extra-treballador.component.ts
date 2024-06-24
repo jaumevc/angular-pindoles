@@ -15,6 +15,7 @@ export class AtributsExtraTreballadorComponent {
 
   addNovesCaracteristiques(value: string) {
     this.servei.mostreMissatge("La caracteristica afegida és: "+value)
+    //afegeix a la vista la nova propietat extra
     this.novesCaracteristiques.emit(value);
   }
 
