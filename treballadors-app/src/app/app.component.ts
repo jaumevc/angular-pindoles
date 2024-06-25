@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Treballador } from './treballador.model';
 import { ServeiTreballadorsService } from './serveis/servei-treballadors.service';
 import { DadesTreballadors } from './serveis/dades.service';
+import { PropietatExtra } from './propietatExtra.model';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,9 @@ export class AppComponent implements OnInit{
   //   new Treballador("Mariona", "Valls", "Cap dept Biotec", 5000),
   //   new Treballador("Ares", "Valls", "Presidenta", 5000)
   // ];
+
+  propietatExtra:PropietatExtra[]=[];
+  
   constructor(private servei:ServeiTreballadorsService, 
               private serveiDades:DadesTreballadors){
     //this.treballadors = this.serveiDades.treballadors;
@@ -28,7 +32,13 @@ export class AppComponent implements OnInit{
     this.serveiDades.getAllTreballadors().subscribe(data => {
       this.treballadors = data;
     });
+
+    //obtenim les props extra:
+    this.serveiDades.getPropsXtraByWorker().subscribe(dades => {
+      this.propietatExtra = dades;
+    });
   }
+
   addNewWorker(){
     // let currant:Treballador= new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou);
     // this.treballadors.push(currant);
