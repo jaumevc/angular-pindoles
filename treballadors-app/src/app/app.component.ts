@@ -34,9 +34,9 @@ export class AppComponent implements OnInit{
     });
 
     //obtenim les props extra:
-    this.serveiDades.getPropsXtraByWorker().subscribe(dades => {
-      this.propietatExtra = dades;
-    });
+    // this.serveiDades.getPropsXtraByWorker().subscribe(dades => {
+    //   this.propietatExtra = dades;
+    // });
   }
 
   addNewWorker(){

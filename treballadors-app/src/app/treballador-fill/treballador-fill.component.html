@@ -7,9 +7,16 @@
             Entrada {{k+1}}: {{currant.nom}} {{currant.cognom}}, {{currant.carrec}}, {{currant.sou}}.
         </li>
     </ul>
-    
+
+     <!-- Afegim les propietats extra per a aquest treballador -->
+  <!-- Afegim les propietats extra per a aquest treballador -->
+  <ul *ngIf="propietatsExtra.length > 0">
+    <li *ngFor="let propExtra of propietatsExtra">
+      {{ propExtra.propietat }}
+    </li>
+  </ul>
+
     <app-atributs-extra-treballador (novesCaracteristiques)="addCaracteristica($event)"> 
-    <!-- <app-atributs-extra-treballador (novesCaracteristiques)="addPropietatExtra($event)"> -->
     </app-atributs-extra-treballador>
 
     <ul style="list-style: none;">

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Treballador } from "../treballador.model";
 import { ServeiTreballadorsService } from "./servei-treballadors.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, tap } from "rxjs";
 import { PropietatExtra } from "../propietatExtra.model";
 
 @Injectable({
@@ -32,8 +32,8 @@ export class DadesTreballadors{
       return this.http.get<Treballador[]>(this.urlGet); 
     } 
 
-    getPropsXtraByWorker():Observable<PropietatExtra[]>{
-      return this.http.get<PropietatExtra[]>(this.urlGetPropsXtraByWorker);
+    getPropsXtraByWorker(): Observable<{ [id: number]: PropietatExtra[] }> {
+      return this.http.get<{ [id: number]: PropietatExtra[] }>(this.urlGetPropsXtraByWorker);
     }
     
       
@@ -48,8 +48,4 @@ export class DadesTreballadors{
       return this.http.post<Treballador>(this.urlPost, treballador, { headers });
     }
 
-      // ddPropietatExtra(propietat:PropietatExtra): Observable<PropietatExtra>{
-      //   const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      //   return this.http.post<PropietatExtra>(this.urlPostPropietat, propietat, { headers });
-      // }
 }
