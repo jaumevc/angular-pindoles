@@ -2,12 +2,14 @@ import { Treballador } from "./treballador.model";
 
 export class PropietatExtra{
    
-    id:number;
+    idPropietat:number;
     propietat:string="";
+    idTreballador: number;
   
-    constructor(propietat:string, treballador:Treballador){
-        this.id = treballador.id;
+    constructor(idPropietat: number, propietat:string, treballador:Treballador){
+        this.idPropietat = idPropietat;
         this.propietat = propietat;
+        this.idTreballador = treballador.id;
     }
     
 }
