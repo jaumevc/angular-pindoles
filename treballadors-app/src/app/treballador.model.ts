@@ -12,7 +12,5 @@ export class Treballador{
         this.cognom = cognom;
         this.carrec = carrec;
         this.sou = sou;
-    }
-    
-
+    } 
 }
