@@ -16,13 +16,13 @@ export class TreballadorFillComponent implements OnInit {
   //video 20 usem aquest component com a pare de atributs-extra-treballador
   nousAtributs = [''];
 
-  // Objecte per emmagatzemar les propietats extra per id de treballador
   propietatsExtra: PropietatExtra[] = [];
+  novaPropietat: string = '';
 
   constructor( private serveiDades:DadesTreballadors){}
 
   ngOnInit(): void {
-    this.serveiDades.getPropsXtraByWorker().subscribe(dades => {
+     this.serveiDades.getPropsXtraByWorker().subscribe(dades => {
       console.log('Dades Propietats Extra:', dades);
       console.log('Treballador Actual:', this.currant);
       this.propietatsExtra = dades[this.currant.id] || [];
@@ -31,7 +31,11 @@ export class TreballadorFillComponent implements OnInit {
   }
 
   addCaracteristica(novaCaracteristica: string) {
-    this.nousAtributs.push(novaCaracteristica);
+    //this.nousAtributs.push(novaCaracteristica);
+    if (novaCaracteristica.trim() !== '') {
+      this.nousAtributs.push(novaCaracteristica);
+      this.novaPropietat = '';  // Reset input field after adding
+    }
   }
 
 }

@@ -31,11 +31,6 @@ export class DadesTreballadors{
     getAllTreballadors():Observable<Treballador[]>{ 
       return this.http.get<Treballador[]>(this.urlGet); 
     } 
-
-    getPropsXtraByWorker(): Observable<{ [id: number]: PropietatExtra[] }> {
-      return this.http.get<{ [id: number]: PropietatExtra[] }>(this.urlGetPropsXtraByWorker);
-    }
-    
       
     //afegim un treballador
     addTreballadorServei(treballador: Treballador): Observable<Treballador> {
@@ -46,6 +41,11 @@ export class DadesTreballadors{
 
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       return this.http.post<Treballador>(this.urlPost, treballador, { headers });
+    }
+
+    
+    getPropsXtraByWorker(): Observable<{ [id: number]: PropietatExtra[] }> {
+      return this.http.get<{ [id: number]: PropietatExtra[] }>(this.urlGetPropsXtraByWorker);
     }
 
 }
