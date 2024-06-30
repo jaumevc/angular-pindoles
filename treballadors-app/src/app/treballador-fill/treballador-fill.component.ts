@@ -36,6 +36,7 @@ export class TreballadorFillComponent implements OnInit {
       this.nousAtributs.push(novaCaracteristica);
       this.novaPropietat = '';  // Reset input field after adding
     }
+    //cridar al servei per afegir la propietat extra en bbdd
   }
 
 }

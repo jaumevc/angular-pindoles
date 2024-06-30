@@ -43,12 +43,12 @@ export class AppComponent implements OnInit{
     // let currant:Treballador= new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou);
     // this.treballadors.push(currant);
 
-    // this.servei.mostreMissatge("Nom Treballador: " +this.txtfNom+" \nCognom Treballador: "+
-    //   this.txtfCognom+ " \nCarrec Treballador: "+this.txtfCarrec);
+    this.servei.mostreMissatge("Nom Treballador: " +this.txtfNom+" \nCognom Treballador: "+
+       this.txtfCognom+ " \nCarrec Treballador: "+this.txtfCarrec);
 
     // this.treballadors.push(new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
     // this.serveiDades.addTreballadorServei(new Treballador(
-    //   this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
+    //    this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
 
     const nouTreballador = new Treballador(this.txtfNom, this.txtfCognom, this.txtfCarrec, this.txtfsou);
 
