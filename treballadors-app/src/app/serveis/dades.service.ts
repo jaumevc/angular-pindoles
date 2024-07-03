@@ -13,8 +13,8 @@ export class DadesTreballadors{
     private urlGet:string = 'http://localhost:8080/pildoras/angular-rest/treballador/allworkers';
     private urlPost:string = 'http://localhost:8080/pildoras/angular-rest/treballador/addworker';
     private urlGetPropsXtraByWorker:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/propietatsbyworker';
-    //private urlPostPropietat:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/addpropietat';
-  
+    private urlPostPropietat:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/addpropietat';
+
 
     constructor(private serveiPopup: ServeiTreballadorsService,private http:HttpClient){}
 
@@ -48,4 +48,10 @@ export class DadesTreballadors{
       return this.http.get<{ [id: number]: PropietatExtra[] }>(this.urlGetPropsXtraByWorker);
     }
 
+    //todo jaume
+    addPropietatExtra(propietatExtra:PropietatExtra): Observable<PropietatExtra>{
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      return this.http.post<PropietatExtra>(this.urlPostPropietat,propietatExtra,{headers});
+    }
+  
 }

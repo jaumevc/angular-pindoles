@@ -14,7 +14,7 @@ export class TreballadorFillComponent implements OnInit {
   @Input() k:number;
 
   //video 20 usem aquest component com a pare de atributs-extra-treballador
-  nousAtributs = [''];
+  //nousAtributs = [''];
 
   propietatsExtra: PropietatExtra[] = [];
   novaPropietat: string = '';
@@ -30,13 +30,10 @@ export class TreballadorFillComponent implements OnInit {
     });
   }
 
-  addCaracteristica(novaCaracteristica: string) {
-    //this.nousAtributs.push(novaCaracteristica);
-    if (novaCaracteristica.trim() !== '') {
-      this.nousAtributs.push(novaCaracteristica);
-      this.novaPropietat = '';  // Reset input field after adding
+  addCaracteristica(novaCaracteristica: PropietatExtra) {
+    if (novaCaracteristica.propietat.trim() !== '') {
+      this.propietatsExtra.push(novaCaracteristica);
     }
-    //cridar al servei per afegir la propietat extra en bbdd
   }
 
 }
