@@ -12,20 +12,19 @@ export class DadesTreballadors{
 
     private urlGet:string = 'http://localhost:8080/pildoras/angular-rest/treballador/allworkers';
     private urlPost:string = 'http://localhost:8080/pildoras/angular-rest/treballador/addworker';
+
     private urlGetPropsXtraByWorker:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/propietatsbyworker';
     private urlPostPropietat:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/addpropietat';
 
-
     constructor(private serveiPopup: ServeiTreballadorsService,private http:HttpClient){}
 
-    treballadors:Treballador[]=[
+    //treballadors:Treballador[]=[
         // new Treballador("Susana", "Jiménez", "Directora General", 9000),
         // new Treballador("Mariona", "Valls", "Cap dept Biotec", 5000),
         // new Treballador("Ares", "Valls", "Presidenta", 5000),
-        // new Treballador("Jaume", "Valls", "Peó caminer", 1000)
-      ];
+        // new Treballador("Jaume", "Valls", "Peó caminer", 1000)];
     
-    propietatExtra:PropietatExtra[]=[];
+    //propietatExtra:PropietatExtra[]=[];
 
     //optenim estudiants del metode get de la API REST 
     getAllTreballadors():Observable<Treballador[]>{ 
@@ -34,24 +33,23 @@ export class DadesTreballadors{
       
     //afegim un treballador
     addTreballadorServei(treballador: Treballador): Observable<Treballador> {
+      //exemple de crida entre serveis
       this.serveiPopup.mostreMissatge("La presona que afegeixo a la llista:\n" +
           treballador.nom + "\n" + treballador.cognom + "\n" + treballador.carrec + "\n" + treballador.sou);
-
       // this.treballadors.push(treballador);
-
+      //afegim teeballador per post
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       return this.http.post<Treballador>(this.urlPost, treballador, { headers });
     }
 
-    
+    //obtenim les propietats extra per a cada treballador 
     getPropsXtraByWorker(): Observable<{ [id: number]: PropietatExtra[] }> {
       return this.http.get<{ [id: number]: PropietatExtra[] }>(this.urlGetPropsXtraByWorker);
     }
 
-    //todo jaume
+    //afegim una propietat extra al treballador corresponent
     addPropietatExtra(propietatExtra:PropietatExtra): Observable<PropietatExtra>{
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       return this.http.post<PropietatExtra>(this.urlPostPropietat,propietatExtra,{headers});
     }
-  
 }

@@ -23,10 +23,9 @@ export class TreballadorFillComponent implements OnInit {
 
   ngOnInit(): void {
      this.serveiDades.getPropsXtraByWorker().subscribe(dades => {
-      console.log('Dades Propietats Extra:', dades);
-      console.log('Treballador Actual:', this.currant);
+      console.log('Dades Propietats Extra: ', dades , '.Del treballador: ', this.currant);
       this.propietatsExtra = dades[this.currant.id] || [];
-      console.log('Propietats Extra per al Treballador:', this.propietatsExtra);
+      console.log('Propietats Extra: ',this.propietatsExtra, 'del Treballador:', this.currant);
     });
   }
 

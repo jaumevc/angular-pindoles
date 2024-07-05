@@ -32,17 +32,13 @@ export class AppComponent implements OnInit{
     this.serveiDades.getAllTreballadors().subscribe(data => {
       this.treballadors = data;
     });
-
-    //obtenim les props extra:
-    // this.serveiDades.getPropsXtraByWorker().subscribe(dades => {
-    //   this.propietatExtra = dades;
-    // });
   }
 
   addNewWorker(){
     // let currant:Treballador= new Treballador(this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou);
     // this.treballadors.push(currant);
 
+    //Exemple de crida entre serveis
     this.servei.mostreMissatge("Nom Treballador: " +this.txtfNom+" \nCognom Treballador: "+
        this.txtfCognom+ " \nCarrec Treballador: "+this.txtfCarrec);
 
@@ -51,7 +47,6 @@ export class AppComponent implements OnInit{
     //    this.txtfNom,this.txtfCognom, this.txtfCarrec, this.txtfsou));
 
     const nouTreballador = new Treballador(this.txtfNom, this.txtfCognom, this.txtfCarrec, this.txtfsou);
-
     this.serveiDades.addTreballadorServei(nouTreballador).subscribe(data => {
       this.treballadors.push(data);
     }, error => {
@@ -59,6 +54,4 @@ export class AppComponent implements OnInit{
     });
     
   }
-
-
 }
