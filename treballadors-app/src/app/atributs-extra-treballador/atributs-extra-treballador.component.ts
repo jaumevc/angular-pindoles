@@ -33,11 +33,10 @@ export class AtributsExtraTreballadorComponent {
     // Crea l'objecte PropietatExtra
     const novaPropietat = new PropietatExtra(0, value, this.treballador);  
     this.dadesServei.addPropietatExtra(novaPropietat).subscribe(
-      (res) => {
+      (propietat) => {
         this.servei.mostreMissatge("La caracteristica afegida és: " + value);
-        // Emiteix l'objecte retornat
-        this.novesCaracteristiques.emit(res);  
-
+        // Emet l'objecte retornat
+        this.novesCaracteristiques.emit(propietat);  
         // Buidem el camp de text
         this.novaCarateristicaInput.nativeElement.value = '';  
       },
