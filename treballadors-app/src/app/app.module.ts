@@ -9,18 +9,35 @@ import { AtributsExtraTreballadorComponent } from './atributs-extra-treballador/
 import { ServeiTreballadorsService } from './serveis/servei-treballadors.service';
 import { DadesTreballadors } from './serveis/dades.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { ProjectesComponentComponent } from './projectes-component/projectes-component.component';
+import { QuiSocComponentComponent } from './qui-soc-component/qui-soc-component.component';
+import { ContacteComponentComponent } from './contacte-component/contacte-component.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes:Routes=[
+  {path:'', component:HomeComponentComponent},
+  {path:'projectes', component:ProjectesComponentComponent},
+  {path:'quisoc', component:QuiSocComponentComponent},
+  {path:'contacte', component:ContacteComponentComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     TreballadorFillComponent,
-    AtributsExtraTreballadorComponent
+    AtributsExtraTreballadorComponent,
+    HomeComponentComponent,
+    ProjectesComponentComponent,
+    QuiSocComponentComponent,
+    ContacteComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     ServeiTreballadorsService,
