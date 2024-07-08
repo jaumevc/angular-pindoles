@@ -6,109 +6,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Projectes</a>
-        <a class="nav-link" href="#">Qui sóc</a>
+        <a class="nav-link active" aria-current="page" href="">Home</a>
+        <a class="nav-link" href="projectes">Projectes</a>
+        <a class="nav-link" href="quisoc">Qui sóc</a>
         <a class="nav-link disabled">Contacte</a>
       </div>
     </div>
   </div>
 </nav>
 
-<div class="container">
-  <h1 style="text-align: center;">{{title}}</h1>
-  <br /><br />
-  <h2>Formulari introducció dades:</h2>
-  <br />
-  <!--es vol mostrar en una fila tots els textfields del formulari-->
-  <form class="form-group row">
-    <!--es vol mostrar el texte indicatiu del textfield a sobre del quadre de text-->
-    <div class="form-group col-md-3">
-      <label for="nom">Nom:</label>
-      <input type="text" [(ngModel)]="txtfNom" name="nomTf" id="nomId" placeholder="Afegiex el nom"
-        class="form-control">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="cognom">Cognom:</label>
-      <input type="text" [(ngModel)]="txtfCognom" name="cognomTf" id="cognomId" placeholder="Afegiex el cognom"
-        class="form-control">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="carrec">Càrrec:</label>
-      <input type="text" [(ngModel)]="txtfCarrec" name="carrecTf" id="carrecId" placeholder="Afegiex el càrrec"
-        class="form-control">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="sou">Sou:</label>
-      <input type="number" [(ngModel)]="txtfsou" name="souTf" id="souId" placeholder="Afegiex el sou"
-        class="form-control">
-    </div>
-
-    <div class="col">
-      <input type="submit" class="btn btn-primary" value="Add new worker" (click)="addNewWorker()"
-        style="margin-top: 35px;">
-    </div>
-  </form>
-
-  <br /><br />
-  <div class="row">
-    <div class="col">
-      <h2>Dades introduides:</h2>
-      <app-treballador-fill *ngFor="let empleat of treballadors; let i=index" [currant]="empleat" [k]="i">
-      </app-treballador-fill>
-    </div>
-  </div>
-
-  <br />
-</div>
+<router-outlet></router-outlet>
 
 
-<div class="container">
-  <h1 style="text-align: center;">{{title}}</h1>
-  <br /> <br />
-  <h2>Formulari introducció dades:</h2>
-  <br />
-  <!--es vol mostrar en una fila tots els textfields del formulari-->
-  <form class="form-group row">
-    <!--es vol mostrar el texte indicatiu del textfield a sobre del quadre de text-->
-    <div class="form-group col-md-3">
-      <label for="nom">Nom:</label>
-      <input type="text" [(ngModel)]="txtfNom" name="nomTf" id="nomId" placeholder="Afegiex el nom"
-        class="form-control">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="nom">Cognom:</label>
-      <input type="text" [(ngModel)]="txtfCognom" name="cognomTf" id="cognomId" placeholder="Afegiex el cognom"
-        class="form-control">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="nom">Càrrec:</label>
-      <input type="text" [(ngModel)]="txtfCarrec" name="carrecTf" id="carrecId" placeholder="Afegiex el càrrec"
-        class="form-control">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="nom">Sou:</label>
-      <input type="number" [(ngModel)]="txtfsou" name="souTf" id="souId" placeholder="Afegiex el sou"
-        class="form-control">
-    </div>
 
-    <div class="col">
-      <input type="submit" class="btn btn-primary" value="Add new worker" (click)="addNewWorker()"
-        style="margin-top: 35px;">
-    </div>
-
-  </form>
-
-  <br /><br />
-  <div class="row">
-    <div class="col">
-      <h2>Dades introduides:</h2>
-
-      <app-treballador-fill *ngFor="let empleat of treballadors; let i=index" [currant]="empleat" [k]="i">
-      </app-treballador-fill>
-
-    </div>
-  </div>
-
-  <br />
-</div>
