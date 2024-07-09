@@ -1,5 +1,39 @@
-<p>projectes-component works!</p>
 
-<div style="text-align: center;">
-    <button class="btn btn-primary" (click)="tornarHome()">Tornar a Home</button>
+<div class="container">
+<p>projectes-component works!</p>
+<br/>
+<form class="form-group row">
+    <!--es vol mostrar el texte indicatiu del textfield a sobre del quadre de text-->
+    <div class="form-group col-md-3">
+      <label for="nom">Nom:</label>
+      <input type="text" [(ngModel)]="txtfNom" name="nomTf" id="nomId" placeholder="Afegiex el nom"
+        class="form-control">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="cognom">Cognom:</label>
+      <input type="text" [(ngModel)]="txtfCognom" name="cognomTf" id="cognomId" placeholder="Afegiex el cognom"
+        class="form-control">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="carrec">Càrrec:</label>
+      <input type="text" [(ngModel)]="txtfCarrec" name="carrecTf" id="carrecId" placeholder="Afegiex el càrrec"
+        class="form-control">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="sou">Sou:</label>
+      <input type="number" [(ngModel)]="txtfsou" name="souTf" id="souId" placeholder="Afegiex el sou"
+        class="form-control">
+    </div>
+
+    <div class="col">
+      <input type="submit" class="btn btn-primary" value="Add new worker" (click)="addNewWorker()"
+        style="margin-top: 35px;">
+    </div>
+  </form>
 </div>
+<br/><br/>
+<div style="text-align: center;">
+    <button class="btn btn-success" (click)="tornarHome()">Tornar a Home</button>
+</div>
+
+
