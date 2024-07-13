@@ -14,12 +14,15 @@ import { ProjectesComponentComponent } from './projectes-component/projectes-com
 import { QuiSocComponentComponent } from './qui-soc-component/qui-soc-component.component';
 import { ContacteComponentComponent } from './contacte-component/contacte-component.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ActualitzaComponentComponent } from './actualitza-component/actualitza-component.component';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponentComponent},
   {path:'projectes', component:ProjectesComponentComponent},
   {path:'quisoc', component:QuiSocComponentComponent},
-  {path:'contacte', component:ContacteComponentComponent}
+  {path:'contacte', component:ContacteComponentComponent},
+  {path:'actualitzar', component:ActualitzaComponentComponent}
+ // ,{path:'updatar/:id/:nom/:cognom/:carrec/:sou', component:ActualitzaComponentComponent}
 ];
 
 @NgModule({
@@ -30,7 +33,8 @@ const appRoutes:Routes=[
     HomeComponentComponent,
     ProjectesComponentComponent,
     QuiSocComponentComponent,
-    ContacteComponentComponent
+    ContacteComponentComponent,
+    ActualitzaComponentComponent
   ],
   imports: [
     BrowserModule,

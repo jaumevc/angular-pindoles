@@ -1,8 +1,13 @@
 <!-- <p>treballador-fill works!</p> -->
 <div>
+  <!-- TODO JAUME!!!!!!!!!!!!!!!!!!!!!!! -->
   <ul>
     <li>
-        Entrada {{k+1}}: {{currant.nom}} {{currant.cognom}}, {{currant.carrec}}, {{currant.sou}}, <b>ID:</b> {{currant.id}}.
+        <!-- <a href="/actualitzar"> -->
+        <a [routerLink]="['/actualitzar',currant]">
+        <!-- <a [routerLink]="['/updatar',currant.id, currant.nom, currant.carrec, currant.sou]"> -->
+          Entrada {{k+1}}: {{currant.nom}} {{currant.cognom}}, {{currant.carrec}}, {{currant.sou}}, <b>ID:</b> {{currant.id}}.
+        </a>
     </li>
   </ul>
 

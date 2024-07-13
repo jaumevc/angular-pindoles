@@ -9,10 +9,13 @@ import { PropietatExtra } from "../propietatExtra.model";
     providedIn: 'root'
   })
 export class DadesTreballadors{
-
+    //OPERACIONS BBDD TREBALLADOR
     private urlGet:string = 'http://localhost:8080/pildoras/angular-rest/treballador/allworkers';
     private urlPost:string = 'http://localhost:8080/pildoras/angular-rest/treballador/addworker';
 
+    private urlPut:string = 'http://localhost:8080/pildoras/angular-rest/treballador/updatetreballador';
+
+    //OPERACIONS BBDD PROPIETAT-EXTRA
     private urlGetPropsXtraByWorker:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/propietatsbyworker';
     private urlPostPropietat:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/addpropietat';
 
@@ -26,11 +29,16 @@ export class DadesTreballadors{
     
     //propietatExtra:PropietatExtra[]=[];
 
+    updateTreballador(treballador:Treballador): Observable<Treballador> {
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      return this.http.put<Treballador>(this.urlPut,treballador,{headers});
+    }
+
     //optenim estudiants del metode get de la API REST 
     getAllTreballadors():Observable<Treballador[]>{ 
       return this.http.get<Treballador[]>(this.urlGet); 
     } 
-      
+    
     //afegim un treballador
     addTreballadorServei(treballador: Treballador): Observable<Treballador> {
       //exemple de crida entre serveis
