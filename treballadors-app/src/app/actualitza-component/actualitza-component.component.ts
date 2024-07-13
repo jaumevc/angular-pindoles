@@ -12,8 +12,7 @@ export class ActualitzaComponentComponent {
   txtfCognom:string="";
   txtfCarrec:string="";
   txtfsou:number=0;
-
-  idTreballador:number=0;
+  id:number=0;
 
   constructor( private serveiDades:DadesTreballadors){}
 

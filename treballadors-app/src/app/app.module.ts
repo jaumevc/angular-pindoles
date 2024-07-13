@@ -17,12 +17,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActualitzaComponentComponent } from './actualitza-component/actualitza-component.component';
 
 const appRoutes:Routes=[
-  {path:'', component:HomeComponentComponent},
-  {path:'projectes', component:ProjectesComponentComponent},
-  {path:'quisoc', component:QuiSocComponentComponent},
-  {path:'contacte', component:ContacteComponentComponent},
-  {path:'actualitzar', component:ActualitzaComponentComponent}
- // ,{path:'updatar/:id/:nom/:cognom/:carrec/:sou', component:ActualitzaComponentComponent}
+  { path:'', component:HomeComponentComponent},
+  { path:'projectes', component:ProjectesComponentComponent},
+  { path:'quisoc', component:QuiSocComponentComponent},
+  { path:'contacte', component:ContacteComponentComponent},
+  //{ path:'actualitzar', component:ActualitzaComponentComponent},
+  { path: 'updatar/:id/:nom/:cognom/:carrec/:sou', component: ActualitzaComponentComponent }
 ];
 
 @NgModule({
