@@ -17,7 +17,7 @@ export class ProjectesComponentComponent implements OnInit {
   treballadors:Treballador[]=[];
 
   constructor(private router:Router,
-    private serveiDades:DadesTreballadors
+    private serveiDades:DadesTreballadors,
   ){}
 
   ngOnInit(): void {

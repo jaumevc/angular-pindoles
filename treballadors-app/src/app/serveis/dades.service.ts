@@ -31,7 +31,10 @@ export class DadesTreballadors{
 
     updateTreballador(treballador:Treballador): Observable<Treballador> {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      return this.http.put<Treballador>(this.urlPut,treballador,{headers});
+      console.log('Request URL:', this.urlPut); // Verificar URL
+      console.log('Request Headers:', headers); // Verificar Headers
+      console.log('Request Body:', JSON.stringify(treballador)); // Verificar Body
+      return this.http.put<Treballador>(this.urlPut,treballador,{ headers });
     }
 
     //optenim estudiants del metode get de la API REST 
