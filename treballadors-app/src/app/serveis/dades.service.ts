@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Treballador } from "../treballador.model";
 import { ServeiTreballadorsService } from "./servei-treballadors.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable, tap } from "rxjs";
+import { catchError, Observable, tap, throwError } from "rxjs";
 import { PropietatExtra } from "../propietatExtra.model";
 
 @Injectable({
@@ -14,7 +14,7 @@ export class DadesTreballadors{
     private urlPost:string = 'http://localhost:8080/pildoras/angular-rest/treballador/addworker';
 
     private urlPut:string = 'http://localhost:8080/pildoras/angular-rest/treballador/updatetreballador';
-
+    
     //OPERACIONS BBDD PROPIETAT-EXTRA
     private urlGetPropsXtraByWorker:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/propietatsbyworker';
     private urlPostPropietat:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/addpropietat';
@@ -31,9 +31,6 @@ export class DadesTreballadors{
 
     updateTreballador(treballador:Treballador): Observable<Treballador> {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      console.log('Request URL:', this.urlPut); // Verificar URL
-      console.log('Request Headers:', headers); // Verificar Headers
-      console.log('Request Body:', JSON.stringify(treballador)); // Verificar Body
       return this.http.put<Treballador>(this.urlPut,treballador,{ headers });
     }
 

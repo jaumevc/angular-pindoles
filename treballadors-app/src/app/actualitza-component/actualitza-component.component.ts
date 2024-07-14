@@ -29,8 +29,19 @@ export class ActualitzaComponentComponent implements OnInit{
   }
 
   updateWorker(){
-    let workerUpdated = new Treballador(this.txtfNom, this.txtfCognom, this.txtfCarrec, this.txtfsou, this.id);
-    this.serveiDades.updateTreballador(workerUpdated);
-    //this.router.navigate([""]);
+    const workerUpdated = new Treballador(this.txtfNom, this.txtfCognom, this.txtfCarrec, this.txtfsou, this.id);
+    //this.serveiDades.updateTreballador(workerUpdated);
+
+    this.serveiDades.updateTreballador(workerUpdated)
+      .subscribe(
+        (response) => {
+          console.log('Treballador actualitzat:', response);
+          this.router.navigate([""]); // Navegar a una altra ruta després de l'actualització
+        },
+        (error) => {
+          console.error('Error al actualitzar treballador:', error);
+          // Aquí pots gestionar l'error, com mostrar un missatge d'error a l'usuari
+        }
+      );
   }
 }
