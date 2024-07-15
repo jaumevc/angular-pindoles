@@ -32,8 +32,7 @@ export class ActualitzaComponentComponent implements OnInit{
     const workerUpdated = new Treballador(this.txtfNom, this.txtfCognom, this.txtfCarrec, this.txtfsou, this.id);
     //this.serveiDades.updateTreballador(workerUpdated);
 
-    this.serveiDades.updateTreballador(workerUpdated)
-      .subscribe(
+    this.serveiDades.updateTreballador(workerUpdated).subscribe(
         (response) => {
           console.log('Treballador actualitzat:', response);
           this.router.navigate([""]); // Navegar a una altra ruta després de l'actualització
@@ -44,4 +43,34 @@ export class ActualitzaComponentComponent implements OnInit{
         }
       );
   }
+
+  //Modifica el teu controlador Spring Boot per retornar una resposta JSON:
+  deleteWorkerRespostaWSJson(){
+
+    this.serveiDades.deleteWorker(this.id).subscribe( //resposta amb ws amb un json
+      (response) => {
+        console.log('Treballador actualitzat:', response);
+        this.router.navigate([""]); // Navegar a una altra ruta després de l'actualització
+      },
+      (error) => {
+        console.error('Error al actualitzar treballador:', error);
+        // Aquí pots gestionar l'error, com mostrar un missatge d'error a l'usuari
+      }
+    );
+  }
+  
+  //Modifica el teu controlador Spring Boot per retornar una resposta JSON:
+  deleteTreballadorRespostaWSText(){
+    this.serveiDades.deleteTreballador(this.id).subscribe( //resposta amb text pla
+      (response) => {
+        console.log('Treballador actualitzat:', response);
+        this.router.navigate([""]); // Navegar a una altra ruta després de l'actualització
+      },
+      (error) => {
+        console.error('Error al actualitzar treballador:', error);
+        // Aquí pots gestionar l'error, com mostrar un missatge d'error a l'usuari
+      }
+    );
+  }
+  
 }

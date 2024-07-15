@@ -14,6 +14,9 @@ export class DadesTreballadors{
     private urlPost:string = 'http://localhost:8080/pildoras/angular-rest/treballador/addworker';
 
     private urlPut:string = 'http://localhost:8080/pildoras/angular-rest/treballador/updatetreballador';
+
+    private urlDelText:string = 'http://localhost:8080/pildoras/angular-rest/treballador/eliminatreballador';
+    private urlDelJson:string = 'http://localhost:8080/pildoras/angular-rest/treballador/deleteworker';
     
     //OPERACIONS BBDD PROPIETAT-EXTRA
     private urlGetPropsXtraByWorker:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/propietatsbyworker';
@@ -28,6 +31,18 @@ export class DadesTreballadors{
         // new Treballador("Jaume", "Valls", "Peó caminer", 1000)];
     
     //propietatExtra:PropietatExtra[]=[];
+
+    // Mètode per eliminar un treballador pero amb servei rest retronant un json
+    deleteWorker(id: number): Observable<string> {
+      const deleteUrl = `${this.urlDelJson}/${id}`;
+      return this.http.delete<string>(deleteUrl);
+    }
+
+    //resposta amb text pla
+    deleteTreballador(id: number): Observable<string> {
+    const deleteUrl = `${this.urlDelText}/${id}`;
+    return this.http.delete(deleteUrl, { responseType: 'text' });
+    }
 
     updateTreballador(treballador:Treballador): Observable<Treballador> {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
