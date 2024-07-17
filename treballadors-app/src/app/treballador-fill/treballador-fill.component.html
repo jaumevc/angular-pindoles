@@ -1,13 +1,20 @@
 <!-- <p>treballador-fill works!</p> -->
-<div>
+<div style="margin-top: 35px;">
   <!-- TODO JAUME!!!!!!!!!!!!!!!!!!!!!!! -->
   <ul>
     <li>
+
+        Entrada {{k+1}}: {{currant.nom}} {{currant.cognom}}, {{currant.carrec}}, {{currant.sou}}, <b>ID:</b> {{currant.id}}.
         <!-- <a href="/actualitzar"> -->
         <!-- <a [routerLink]="['/actualitzar',currant]"> -->
-        <a [routerLink]="['/updatar', currant.id, currant.nom, currant.cognom, currant.carrec, currant.sou]"> 
-          Entrada {{k+1}}: {{currant.nom}} {{currant.cognom}}, {{currant.carrec}}, {{currant.sou}}, <b>ID:</b> {{currant.id}}.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a [routerLink]="['/updatar', currant.id, currant.nom, currant.cognom, currant.carrec, currant.sou]" 
+           [queryParams]="{accio:'1'}"> 
+          Actualitzar
+          <!-- Entrada {{k+1}}: {{currant.nom}} {{currant.cognom}}, {{currant.carrec}}, {{currant.sou}}, <b>ID:</b> {{currant.id}}. -->
         </a>
+        <input type="submit" class="btn btn-danger" value="Eliminar" style="margin-left: 35px;"
+          (click)="navigateToUpdatar(currant)"/>
     </li>
   </ul>
 
