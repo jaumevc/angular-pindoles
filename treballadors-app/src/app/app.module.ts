@@ -15,6 +15,7 @@ import { QuiSocComponentComponent } from './qui-soc-component/qui-soc-component.
 import { ContacteComponentComponent } from './contacte-component/contacte-component.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualitzaComponentComponent } from './actualitza-component/actualitza-component.component';
+import { ErrorPersonalitzatComponent } from './error-personalitzat/error-personalitzat.component';
 
 const appRoutes:Routes=[
   { path:'', component:HomeComponentComponent},
@@ -22,7 +23,8 @@ const appRoutes:Routes=[
   { path:'quisoc', component:QuiSocComponentComponent},
   { path:'contacte', component:ContacteComponentComponent},
   //{ path:'actualitzar', component:ActualitzaComponentComponent},
-  { path: 'updatar/:id/:nom/:cognom/:carrec/:sou', component: ActualitzaComponentComponent }
+  { path: 'updatar/:id/:nom/:cognom/:carrec/:sou', component: ActualitzaComponentComponent },
+  { path:'**',component:ErrorPersonalitzatComponent }
 ];
 
 @NgModule({
@@ -34,7 +36,8 @@ const appRoutes:Routes=[
     ProjectesComponentComponent,
     QuiSocComponentComponent,
     ContacteComponentComponent,
-    ActualitzaComponentComponent
+    ActualitzaComponentComponent,
+    ErrorPersonalitzatComponent
   ],
   imports: [
     BrowserModule,
