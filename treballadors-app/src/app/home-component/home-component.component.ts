@@ -10,6 +10,9 @@ import { DadesTreballadors } from '../serveis/dades.service';
   styleUrl: './home-component.component.css'
 })
 export class HomeComponentComponent implements OnInit{
+
+  userlogin:boolean = false;
+
   title = 'Formulari per afegir treballadors';
   txtfNom:string="";
   txtfCognom:string="";
