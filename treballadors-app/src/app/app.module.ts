@@ -16,6 +16,7 @@ import { ContacteComponentComponent } from './contacte-component/contacte-compon
 import { RouterModule, Routes } from '@angular/router';
 import { ActualitzaComponentComponent } from './actualitza-component/actualitza-component.component';
 import { ErrorPersonalitzatComponent } from './error-personalitzat/error-personalitzat.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes:Routes=[
   { path:'', component:HomeComponentComponent},
@@ -24,6 +25,7 @@ const appRoutes:Routes=[
   { path:'contacte', component:ContacteComponentComponent},
   //{ path:'actualitzar', component:ActualitzaComponentComponent},
   { path: 'updatar/:id/:nom/:cognom/:carrec/:sou', component: ActualitzaComponentComponent },
+  { path: 'login', component:LoginComponent },
   { path:'**',component:ErrorPersonalitzatComponent }
 ];
 
@@ -37,7 +39,8 @@ const appRoutes:Routes=[
     QuiSocComponentComponent,
     ContacteComponentComponent,
     ActualitzaComponentComponent,
-    ErrorPersonalitzatComponent
+    ErrorPersonalitzatComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
