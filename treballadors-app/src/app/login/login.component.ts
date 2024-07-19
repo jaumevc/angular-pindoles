@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit{
   }
 
   login(form:NgForm){
-    
+    const email = form.value.email;
+    const password = form.value.password;
   }
 
 }
