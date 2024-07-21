@@ -4,6 +4,7 @@ import { ServeiTreballadorsService } from "./servei-treballadors.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError, Observable, tap, throwError } from "rxjs";
 import { PropietatExtra } from "../propietatExtra.model";
+import { UserLogin } from "../userLogin.model";
 
 @Injectable({
     providedIn: 'root'
@@ -21,6 +22,10 @@ export class DadesTreballadors{
     //OPERACIONS BBDD PROPIETAT-EXTRA
     private urlGetPropsXtraByWorker:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/propietatsbyworker';
     private urlPostPropietat:string ='http://localhost:8080/pildoras/angular-rest/propietatextra/addpropietat';
+
+    //OPERACIONS BBDD LOGINS
+    private urlPostValidaLogin:string = "http://localhost:8080/pildoras/angular-rest/login/validalogin";
+    private urlPostAddUserLogin:string = "http://localhost:8080/pildoras/angular-rest/login/adduserlogin";
 
     constructor(private serveiPopup: ServeiTreballadorsService,private http:HttpClient){}
 
@@ -74,5 +79,10 @@ export class DadesTreballadors{
     addPropietatExtra(propietatExtra:PropietatExtra): Observable<PropietatExtra>{
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       return this.http.post<PropietatExtra>(this.urlPostPropietat,propietatExtra,{headers});
+    }
+
+    validaLogin(userLogin:UserLogin):Observable<UserLogin>{
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      return this.http.post<UserLogin>(this.urlPostValidaLogin,UserLogin,{headers});
     }
 }
