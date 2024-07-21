@@ -81,8 +81,8 @@ export class DadesTreballadors{
       return this.http.post<PropietatExtra>(this.urlPostPropietat,propietatExtra,{headers});
     }
 
-    validaLogin(userLogin:UserLogin):Observable<UserLogin>{
+    validaLogin(userLogin:UserLogin):Observable<Boolean>{
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      return this.http.post<UserLogin>(this.urlPostValidaLogin,UserLogin,{headers});
+      return this.http.post<Boolean>(this.urlPostValidaLogin,UserLogin,{headers});
     }
 }
