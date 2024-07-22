@@ -19,13 +19,14 @@ import { ErrorPersonalitzatComponent } from './error-personalitzat/error-persona
 import { LoginComponent } from './login/login.component';
 
 const appRoutes:Routes=[
+  { path: 'login', component:LoginComponent },
   { path:'', component:HomeComponentComponent},
   { path:'projectes', component:ProjectesComponentComponent},
   { path:'quisoc', component:QuiSocComponentComponent},
   { path:'contacte', component:ContacteComponentComponent},
   //{ path:'actualitzar', component:ActualitzaComponentComponent},
   { path: 'updatar/:id/:nom/:cognom/:carrec/:sou', component: ActualitzaComponentComponent },
-  { path: 'login', component:LoginComponent },
+  // { path: 'login', component:LoginComponent },
   { path:'**',component:ErrorPersonalitzatComponent }
 ];
 

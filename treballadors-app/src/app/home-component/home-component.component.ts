@@ -3,6 +3,7 @@ import { Treballador } from '../treballador.model';
 import { PropietatExtra } from '../propietatExtra.model';
 import { ServeiTreballadorsService } from '../serveis/servei-treballadors.service';
 import { DadesTreballadors } from '../serveis/dades.service';
+import { UserLogin } from '../userLogin.model';
 
 @Component({
   selector: 'app-home-component',
@@ -10,8 +11,6 @@ import { DadesTreballadors } from '../serveis/dades.service';
   styleUrl: './home-component.component.css'
 })
 export class HomeComponentComponent implements OnInit{
-
-  userlogin:boolean = false;
 
   title = 'Formulari per afegir treballadors';
   txtfNom:string="";
@@ -23,7 +22,6 @@ export class HomeComponentComponent implements OnInit{
   //   new Treballador("Mariona", "Valls", "Cap dept Biotec", 5000),
   //   new Treballador("Ares", "Valls", "Presidenta", 5000)
   // ];
-
   propietatExtra:PropietatExtra[]=[];
   
   constructor(private servei:ServeiTreballadorsService, 
