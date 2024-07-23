@@ -1,8 +1,7 @@
-
-<div class="container">
-<p>projectes-component works!</p>
-<br/>
-<form class="form-group row">
+<div class="container" *ngIf="isUserlogin; else loginTemplate">
+  <p>projectes-component works!</p>
+  <br />
+  <form class="form-group row" >
     <!--es vol mostrar el texte indicatiu del textfield a sobre del quadre de text-->
     <div class="form-group col-md-3">
       <label for="nom">Nom:</label>
@@ -30,10 +29,13 @@
         style="margin-top: 35px;">
     </div>
   </form>
-</div>
-<br/><br/>
-<div style="text-align: center;">
+  <br /><br />
+  <div style="text-align: center;">
     <button class="btn btn-success" (click)="tornarHome()">Tornar a Home</button>
+  </div>
 </div>
 
 
+<ng-template #loginTemplate>
+  <app-login></app-login>
+</ng-template>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DadesTreballadors } from '../serveis/dades.service';
 import { Treballador } from '../treballador.model';
+import { LoginService } from '../serveis/login.service';
 
 @Component({
   selector: 'app-projectes-component',
@@ -16,11 +17,18 @@ export class ProjectesComponentComponent implements OnInit {
   txtfsou:number=0;
   treballadors:Treballador[]=[];
 
+  isUserlogin:boolean;// =false;
+
   constructor(private router:Router,
     private serveiDades:DadesTreballadors,
+    private loginService:LoginService
   ){}
 
   ngOnInit(): void {
+    //Ens servira per mostrar home html amb *ngIf
+    this.loginService.isLoggedIn.subscribe(status => {
+      this.isUserlogin = status;
+    });
   }
 
   tornarHome(){

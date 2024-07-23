@@ -1,5 +1,5 @@
 <p>actualitza-component works!</p>
-<div class="container">
+<div class="container" *ngIf="isUserlogin; else loginTemplate">
     <form class="form-group row">
         <!--es vol mostrar el texte indicatiu del textfield a sobre del quadre de text-->
         <div class="form-group col-md-3">
@@ -38,3 +38,7 @@
         </div>
     </form>
 </div>
+
+<ng-template #loginTemplate>
+    <app-login></app-login>
+</ng-template>

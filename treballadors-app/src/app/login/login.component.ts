@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { UserLogin } from '../userLogin.model';
 import { DadesTreballadors } from '../serveis/dades.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../serveis/login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,22 +13,24 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   isUserlogin: boolean = false;
+  
   loginError: boolean = false;
   userLogin: UserLogin;
   email: string;
   password:string;
 
   constructor(private serveiDades: DadesTreballadors,
-    private router: Router) { }
+              private router: Router,
+              private loginService: LoginService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   login(form:NgForm){
     const email = form.value.email;
     const password = form.value.password;
     const userLogin = new UserLogin(password, email);
     this.serveiDades.validaLogin(userLogin).subscribe(isLoggedIn => {
+      this.loginService.setLoginStatus(isLoggedIn);
       this.isUserlogin = isLoggedIn;
       if (this.isUserlogin) {
         this.router.navigate(['']);

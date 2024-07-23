@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Treballador } from '../treballador.model';
 import { DadesTreballadors } from '../serveis/dades.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from '../serveis/login.service';
 
 @Component({
   selector: 'app-actualitza-component',
@@ -19,11 +20,19 @@ export class ActualitzaComponentComponent implements OnInit {
 
   accio: number;
 
+  isUserlogin:boolean = false;
+
   constructor(private serveiDades: DadesTreballadors,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private loginService: LoginService) { }
 
   ngOnInit(): void {
+    //Ens servira per mostrar home html amb *ngIf
+    this.loginService.isLoggedIn.subscribe(status => {
+      this.isUserlogin = status;
+    });
+
     this.id = this.route.snapshot.params['id'];
     this.txtfNom = this.route.snapshot.params['nom'];
     this.txtfCognom = this.route.snapshot.params['cognom'];

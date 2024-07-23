@@ -1,6 +1,6 @@
 <!-- <p>home-component works!</p> -->
 <!-- <div class="container"  *ngIf="isUserlogin; else loginTemplate"> -->
-<div class="container" >
+<div class="container" *ngIf="isUserlogin;else loginTemplate">
     <h1 style="text-align: center;">{{title}}</h1>
     <br /><br />
     <h2>Formulari introducció dades:</h2>
@@ -47,6 +47,6 @@
     <br />
   </div>
 
-  <!-- <ng-template #loginTemplate>
+  <ng-template #loginTemplate>
     <app-login></app-login>
-  </ng-template> -->
+  </ng-template>

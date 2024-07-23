@@ -17,11 +17,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActualitzaComponentComponent } from './actualitza-component/actualitza-component.component';
 import { ErrorPersonalitzatComponent } from './error-personalitzat/error-personalitzat.component';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './serveis/login.service';
 
 const appRoutes:Routes=[
   { path: 'login', component:LoginComponent },
   { path:'', component:HomeComponentComponent},
-  { path:'projectes', component:ProjectesComponentComponent},
+  { path:'adduser', component:ProjectesComponentComponent},
   { path:'quisoc', component:QuiSocComponentComponent},
   { path:'contacte', component:ContacteComponentComponent},
   //{ path:'actualitzar', component:ActualitzaComponentComponent},
@@ -52,7 +53,8 @@ const appRoutes:Routes=[
   ],
   providers: [
     ServeiTreballadorsService,
-    DadesTreballadors
+    DadesTreballadors,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
