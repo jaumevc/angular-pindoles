@@ -5,7 +5,7 @@ import { Treballador } from '../treballador.model';
 import { LoginService } from '../serveis/login.service';
 
 @Component({
-  selector: 'app-adduser-component',
+  selector: 'app-adduser',
   templateUrl: './adduser.component.html',
   styleUrl: './adduser.component.css'
 })
