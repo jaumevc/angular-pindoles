@@ -12,6 +12,8 @@ export const AuthGuard: CanActivateFn = (route, state) => {
   return true;
 };
 
+//amb implements CanActive funciona pero esta deprecat per a la versio d'angular que uso
+
 // import { Injectable } from '@angular/core';
 // import { ActivatedRouteSnapshot, CanActivate, GuardResult, MaybeAsync, Router, RouterStateSnapshot } from '@angular/router';
 // import { LoginService } from './login.service';
