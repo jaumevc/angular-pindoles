@@ -10,7 +10,7 @@ import { ServeiTreballadorsService } from './serveis/servei-treballadors.service
 import { DadesTreballadors } from './serveis/dades.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponentComponent } from './home-component/home-component.component';
-import { ProjectesComponentComponent } from './projectes-component/projectes-component.component';
+import { AddUserComponent } from './add-user-component/adduser.component';
 import { QuiSocComponentComponent } from './qui-soc-component/qui-soc-component.component';
 import { ContacteComponentComponent } from './contacte-component/contacte-component.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,11 +18,12 @@ import { ActualitzaComponentComponent } from './actualitza-component/actualitza-
 import { ErrorPersonalitzatComponent } from './error-personalitzat/error-personalitzat.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './serveis/login.service';
+import { AuthGuard } from './serveis/auth.guard';
 
 const appRoutes:Routes=[
   { path: 'login', component:LoginComponent },
-  { path:'', component:HomeComponentComponent},
-  { path:'adduser', component:ProjectesComponentComponent},
+  { path:'', component:HomeComponentComponent, canActivate: [AuthGuard]},
+  { path:'adduser', component:AddUserComponent, canActivate: [AuthGuard]},
   { path:'quisoc', component:QuiSocComponentComponent},
   { path:'contacte', component:ContacteComponentComponent},
   //{ path:'actualitzar', component:ActualitzaComponentComponent},
@@ -37,7 +38,7 @@ const appRoutes:Routes=[
     TreballadorFillComponent,
     AtributsExtraTreballadorComponent,
     HomeComponentComponent,
-    ProjectesComponentComponent,
+    AddUserComponent,
     QuiSocComponentComponent,
     ContacteComponentComponent,
     ActualitzaComponentComponent,

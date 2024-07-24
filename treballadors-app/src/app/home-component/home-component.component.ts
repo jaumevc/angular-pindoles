@@ -25,7 +25,7 @@ export class HomeComponentComponent implements OnInit {
   // ];
   propietatExtra: PropietatExtra[] = [];
 
-  isUserlogin: boolean;// = false;
+  isUserlogin: boolean = false;
 
   constructor(private servei: ServeiTreballadorsService,
     private serveiDades: DadesTreballadors,
@@ -38,12 +38,13 @@ export class HomeComponentComponent implements OnInit {
       this.isUserlogin = status;
     });
 
-    
+
     //this.treballadors = this.serveiDades.treballadors;
     this.serveiDades.getAllTreballadors().subscribe(data => {
       this.treballadors = data;
     });
-    
+
+
   }
 
   addNewWorker() {

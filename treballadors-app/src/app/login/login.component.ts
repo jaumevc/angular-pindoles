@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
   login(form:NgForm){
     const email = form.value.email;
     const password = form.value.password;
+    
     const userLogin = new UserLogin(password, email);
     this.serveiDades.validaLogin(userLogin).subscribe(isLoggedIn => {
       this.loginService.setLoginStatus(isLoggedIn);

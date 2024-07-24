@@ -5,11 +5,11 @@ import { Treballador } from '../treballador.model';
 import { LoginService } from '../serveis/login.service';
 
 @Component({
-  selector: 'app-projectes-component',
-  templateUrl: './projectes-component.component.html',
-  styleUrl: './projectes-component.component.css'
+  selector: 'app-adduser-component',
+  templateUrl: './adduser.component.html',
+  styleUrl: './adduser.component.css'
 })
-export class ProjectesComponentComponent implements OnInit {
+export class AddUserComponent implements OnInit {
 
   txtfNom:string="";
   txtfCognom:string="";
@@ -17,7 +17,7 @@ export class ProjectesComponentComponent implements OnInit {
   txtfsou:number=0;
   treballadors:Treballador[]=[];
 
-  isUserlogin:boolean;// =false;
+  isUserlogin:boolean =false;
 
   constructor(private router:Router,
     private serveiDades:DadesTreballadors,
