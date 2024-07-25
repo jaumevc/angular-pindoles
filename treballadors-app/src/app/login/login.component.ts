@@ -13,9 +13,10 @@ import { LoginService } from '../serveis/login.service';
 export class LoginComponent implements OnInit {
 
   isUserlogin: boolean = false;
-  
   loginError: boolean = false;
+
   userLogin: UserLogin;
+  
   email: string;
   password:string;
 

@@ -27,7 +27,7 @@ const appRoutes:Routes=[
   { path:'quisoc', component:QuiSocComponentComponent},
   { path:'contacte', component:ContacteComponentComponent},
   //{ path:'actualitzar', component:ActualitzaComponentComponent},
-  { path: 'updatar/:id/:nom/:cognom/:carrec/:sou', component: ActualitzaComponentComponent },
+  { path: 'updatar/:id/:nom/:cognom/:carrec/:sou', component: ActualitzaComponentComponent, canActivate: [AuthGuard] },
   // { path: 'login', component:LoginComponent },
   { path:'**',component:ErrorPersonalitzatComponent }
 ];

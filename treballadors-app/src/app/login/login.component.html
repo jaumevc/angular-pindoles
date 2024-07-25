@@ -1,20 +1,19 @@
 <div class="container" style="margin-top: 50px;">
 <!-- (ngSubmit)="provaLogin()" -->
- <!-- (ngSubmit)="login(loginForm)" -->
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" >
         <div class="form-group col-md-4">
             <label for="inputEmail">Email address</label>
             <div>
-                <!-- [(ngModel)]="email" -->
-                <input type="email" [(ngModel)]="email" class="form-control" id="inputEmail" name="email" placeholder="Enter your e-mail" />
+                <input type="email" [(ngModel)]="email" class="form-control" id="inputEmail" 
+                    name="email"  placeholder="Enter your e-mail" />
             </div>
         </div>
         <br/>
         <div class="form-group col-md-4">
             <label for="inputPassword">Password</label>
             <div>
-                <!-- [(ngModel)]="password" -->
-                <input type="password" [(ngModel)]="password" class="form-control" id="inputPassword" name="password" placeholder="Enter your Password" />
+                <input type="password" [(ngModel)]="password" class="form-control" id="inputPassword" 
+                    name="password" placeholder="Enter your Password" />
             </div>
         </div>
         <br/>
