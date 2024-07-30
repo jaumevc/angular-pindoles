@@ -5,11 +5,11 @@ import { Treballador } from '../treballador.model';
 import { LoginService } from '../serveis/login.service';
 
 @Component({
-  selector: 'app-adduser',
-  templateUrl: './adduser.component.html',
-  styleUrl: './adduser.component.css'
+  selector: 'app-addwoker',
+  templateUrl: './addworker.component.html',
+  styleUrl: './addworker.component.css'
 })
-export class AddUserComponent implements OnInit {
+export class AddWorkerComponent implements OnInit {
 
   txtfNom:string="";
   txtfCognom:string="";

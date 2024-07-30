@@ -25,7 +25,7 @@ export class DadesTreballadors{
 
     //OPERACIONS BBDD LOGINS
     private urlPostValidaLogin:string = "http://localhost:8080/pildoras/angular-rest/login/validalogin";
-    private urlPostAddUserLogin:string = "http://localhost:8080/pildoras/angular-rest/login/adduserlogin";
+    // private urlPostAddUserLogin:string = "http://localhost:8080/pildoras/angular-rest/login/adduserlogin";
 
     constructor(private serveiPopup: ServeiTreballadorsService,private http:HttpClient){}
 

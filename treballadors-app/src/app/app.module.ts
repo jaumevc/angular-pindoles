@@ -10,7 +10,7 @@ import { ServeiTreballadorsService } from './serveis/servei-treballadors.service
 import { DadesTreballadors } from './serveis/dades.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponentComponent } from './home-component/home-component.component';
-import { AddUserComponent } from './adduser-component/adduser.component';
+import { AddWorkerComponent } from './addworker-component/addworker.component';
 import { QuiSocComponentComponent } from './qui-soc-component/qui-soc-component.component';
 import { ContacteComponentComponent } from './contacte-component/contacte-component.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -19,17 +19,19 @@ import { ErrorPersonalitzatComponent } from './error-personalitzat/error-persona
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './serveis/login.service';
 import { AuthGuard } from './serveis/auth.guard';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 const appRoutes:Routes=[
   { path: 'login', component:LoginComponent },
   { path:'', component:HomeComponentComponent, canActivate: [AuthGuard]},
-  { path:'adduser', component:AddUserComponent, canActivate: [AuthGuard]},
+  { path:'addwoker', component:AddWorkerComponent, canActivate: [AuthGuard]},
   { path:'quisoc', component:QuiSocComponentComponent},
   { path:'contacte', component:ContacteComponentComponent},
   //{ path:'actualitzar', component:ActualitzaComponentComponent},
   { path: 'updatar/:id/:nom/:cognom/:carrec/:sou', component: ActualitzaComponentComponent, canActivate: [AuthGuard] },
   // { path: 'login', component:LoginComponent },
-  { path:'**',component:ErrorPersonalitzatComponent }
+  { path:'registrar', component:RegistrarComponent },
+  { path:'**', component:ErrorPersonalitzatComponent }
 ];
 
 @NgModule({
@@ -38,12 +40,13 @@ const appRoutes:Routes=[
     TreballadorFillComponent,
     AtributsExtraTreballadorComponent,
     HomeComponentComponent,
-    AddUserComponent,
+    AddWorkerComponent,
     QuiSocComponentComponent,
     ContacteComponentComponent,
     ActualitzaComponentComponent,
     ErrorPersonalitzatComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,
