@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError, Observable, tap, throwError } from "rxjs";
 import { PropietatExtra } from "../propietatExtra.model";
 import { UserLogin } from "../userLogin.model";
+import { Usuari } from "../usuari";
 
 @Injectable({
     providedIn: 'root'
@@ -27,6 +28,9 @@ export class DadesTreballadors{
     private urlPostValidaLogin:string = "http://localhost:8080/pildoras/angular-rest/login/validalogin";
     // private urlPostAddUserLogin:string = "http://localhost:8080/pildoras/angular-rest/login/adduserlogin";
 
+    //OPERACIONS BBDD REGISTRE USUARIS
+    private urlPostRegistreUsuari:string ="http://localhost:8080/pildoras/angular-rest/users/register";
+    
     constructor(private serveiPopup: ServeiTreballadorsService,private http:HttpClient){}
 
     //treballadors:Treballador[]=[
@@ -84,5 +88,10 @@ export class DadesTreballadors{
     validaLogin(userLogin:UserLogin):Observable<boolean>{
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       return this.http.post<boolean>(this.urlPostValidaLogin,userLogin,{headers});
+    }
+
+    addNewUser(usuari: Usuari): Observable<string> {
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      return this.http.post(this.urlPostRegistreUsuari, usuari, { headers, responseType: 'text' });
     }
 }
