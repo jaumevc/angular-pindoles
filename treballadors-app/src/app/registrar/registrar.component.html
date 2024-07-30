@@ -1,1 +1,26 @@
-<p>registrar works!</p>
+<p style="margin-left: 50px;">registrar works!</p>
+<div class="container" style="margin-top: 50px;">
+    
+    <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+        <div class="form-group col-md-2" style="margin-top: 10px;">
+            <label for="inputUserName">Usuari</label>
+            <input type="text" [(ngModel)]="userName" id="inputUserName" name="userName" required placeholder="Afegeix usuari">
+        </div>
+        <div class="form-group col-md-2" style="margin-top: 10px;">
+            <label for="inputEmail">Email address</label>
+            <input type="email" [(ngModel)]="email" id="inputEmail" name="email" required placeholder="Correu electrònic">
+        </div>
+        <div class="form-group col-md-2" style="margin-top: 10px;">
+            <label for="inputPassword">Password</label>
+            <input type="password" [(ngModel)]="password"  id="inputPassword" name="password" required placeholder="Contrasenya">
+        </div>
+        <div class="form-group col-md-2"style="margin-top: 10px;">
+            <label for="inputPhone">Phone</label>
+            <input type="text" [(ngModel)]="phone" id="inputPhone" name="phone" required placeholder="afegeix telefon" [maxlength]="12">
+        </div>
+        <div class="form-group col-md-1">
+            <input type="submit" class="btn btn-danger" value="Registra't"
+                style="margin-left: 50px; margin-top: 35px;" />
+        </div>
+    </form>
+</div>
