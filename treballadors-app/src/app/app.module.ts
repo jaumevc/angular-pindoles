@@ -24,7 +24,7 @@ import { RegistrarComponent } from './registrar/registrar.component';
 const appRoutes:Routes=[
   { path: 'login', component:LoginComponent },
   { path:'', component:HomeComponentComponent, canActivate: [AuthGuard]},
-  { path:'addwoker', component:AddWorkerComponent, canActivate: [AuthGuard]},
+  { path:'addworker', component:AddWorkerComponent, canActivate: [AuthGuard]},
   { path:'quisoc', component:QuiSocComponentComponent},
   { path:'contacte', component:ContacteComponentComponent},
   //{ path:'actualitzar', component:ActualitzaComponentComponent},
